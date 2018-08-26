@@ -1,0 +1,46 @@
+
+
+    var uploadedDocumentsSet =
+        [ 
+            {   
+                doctype: "Invoice",
+                uploadedDocuments: 
+                    [
+                         { name: "d1.pdf",      path: "docstore/declarations/d1.pdf"},
+                         { name: "d1212.pdf",    path: "docstore/declarations/d1212.pdf"}
+                    ]
+            },
+            {   
+                doctype: "Releasing",
+                uploadedDocuments: 
+                    [
+                         { name: "d4444.pdf",   path: "docstore/declarations/d4444.pdf"},
+                         { name: "doc1234.pdf", path: "docstore/declarations/doc1234.pdf"},
+                         { name: "doc1234.pdf", path: "docstore/declarations/doc1234.pdf"}
+                    ]
+            },
+            {   
+                doctype: "Declaration of address",
+                uploadedDocuments: 
+                    [
+                            { name: "ddd9.pdf",   path: "docstore/declarations/ddd9.pdf"}
+                    ]
+            },
+            {   
+                doctype: "Civil ID",
+                uploadedDocuments: 
+                    [
+                            { name: "c1.pdf",   path: "docstore/declarations/c1.pdf"}
+                    ]
+            },
+             {   
+                 doctype: "Packing List",
+                 uploadedDocuments: 
+                     [
+                            { name: "p1.pdf",   path: "docstore/declarations/p1.pdf"},
+                            { name: "p2.pdf",   path: "docstore/declarations/p2.pdf"},
+                            { name: "p3.pdf",   path: "docstore/declarations/p3.pdf"},
+                            { name: "p4.pdf",   path: "docstore/declarations/p4.pdf"}
+                    ]
+             }
+        ]

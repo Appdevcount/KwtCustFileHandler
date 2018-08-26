@@ -1,0 +1,1 @@
+﻿<%@ Page aspCompat="True" Language="C#" AutoEventWireup="true" CodeBehind="RenderFile.aspx.cs" Inherits="DocumentManagementServices.RenderFile" %>

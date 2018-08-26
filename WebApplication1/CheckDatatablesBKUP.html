@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="Content/datatables.min.css" rel="stylesheet" />
+    <title>DataTables | Table plug-in for jQuery</title>
+    <!--<link rel="stylesheet" type="text/css" href="styles/jquery.dataTables.min.css" />
+    �-->
+    <script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" charset="utf8" src="scripts/jquery.dataTables.min.js"></script>
+
+    <script src="Scripts/DocumentsData.js"></script>
+    <style type="text/css">
+         /*$('#DocumentsTable').find('input.Documentscheckd:checkbox:checked').attr('value')*/
+        /*th {object with data 
+            text-align: left;
+           background-color:yellow;
+              
+        }
+        td {
+            text-align: left;
+        }*/
+
+    </style>
+<script type="text/javascript">
+   // AssociatedItemData
+
+    $(document).ready(function () {
+        
+     //   ConfiguredataTables("DocumentsTable", '/data/Checkdata.txt', 'DocumentsData');
+      //  ConfiguredataTables("DocumentsItemAssocaition"), '/data/AssociatedItemData.txt', 'DocumentsItemAssocaition');
+
+        var table = $('#DocumentsTable').DataTable({
+            'ajax': {
+                'url': '/data/Checkdata.txt',
+                'dataSrc': 'DocumentsData'
+            },
+            'columnDefs': [{
+                'targets': 0,
+                'searchable': false,
+                'orderable': false,
+                'className': 'dt-body-center',
+                'render': function (data, type, full, meta) {
+                    return '<input type="checkbox" class="Documentscheckd" name="id[]" value="' + $('<div/>').text(data).html() + '">';
+                }
+            }],
+
+            'order': [[1, 'asc']]
+        });
+
+
+        // Handle click on "Select all" control
+        $('#DocumentsTable-select-all').on('click', function () {
+            // Get all rows with search applied
+            var rows = table.rows({ 'search': 'applied' }).nodes();
+            // Check/uncheck checkboxes for all rows in the table
+            $('input[type="checkbox"]', rows).prop('checked', this.checked);
+        });
+
+        // Handle click on checkbox to set state of "Select all" control
+        $('#DocumentsTable tbody').on('change', 'input[type="checkbox"]', function () {
+            // If checkbox is not checked
+            if (!this.checked) {
+                var el = $('#DocumentsTable-select-all').get(0);
+                // If "Select all" control is checked and has 'indeterminate' property
+                if (el && el.checked && ('indeterminate' in el)) {
+                    // Set visual state of "Select all" control
+                    // as 'indeterminate'
+                    el.indeterminate = true;
+                }
+            }
+        });
+
+        // Handle form submission event
+        $('#frm-DocumentsTable').on('submit', function (e) {
+            var form = this;
+
+            // Iterate over all checkboxes in the table
+            table.$('input[type="checkbox"]').each(function () {
+                // If checkbox doesn't exist in DOM
+                if (!$.contains(document, this)) {
+                    // If checkbox is checked
+                    if (this.checked) {
+                        // Create a hidden element
+                        $(form).append(
+                            $('<input>')
+                                .attr('type', 'hidden')
+                                .attr('name', this.name)
+                                .val(this.value)
+                        );
+                    }
+                }
+            });
+        });
+
+
+
+
+
+
+        var table = $('#DocumentsItemAssocaition').DataTable({
+            'ajax': {
+                'url': '/data/AssociatedItemData.txt',
+                'dataSrc': 'AssociatedItemData'
+            },
+            'columnDefs': [{
+                'targets': 0,
+                'searchable': false,
+                'orderable': false,
+                'className': 'dt-body-center',
+                'render': function (data, type, full, meta) {
+                    return '<input type="checkbox" class="DocumentsItemcheckd" name="id[]" value="' + $('<div/>').text(data).html() + '">';
+                }
+            }],
+
+            'order': [[1, 'asc']]
+        });
+
+
+        // Handle click on "Select all" control
+        $('#DocumentsItemAssocaition-select-all').on('click', function () {
+            // Get all rows with search applied
+            var rows = table.rows({ 'search': 'applied' }).nodes();
+            // Check/uncheck checkboxes for all rows in the table
+            $('input[type="checkbox"]', rows).prop('checked', this.checked);
+        });
+
+        // Handle click on checkbox to set state of "Select all" control
+        $('#DocumentsItemAssocaition tbody').on('change', 'input[type="checkbox"]', function () {
+            // If checkbox is not checked
+            if (!this.checked) {
+                var el = $('#DocumentsItemAssocaition-select-all').get(0);
+                // If "Select all" control is checked and has 'indeterminate' property
+                if (el && el.checked && ('indeterminate' in el)) {
+                    // Set visual state of "Select all" control
+                    // as 'indeterminate'
+                    el.indeterminate = true;
+                }
+            }
+        });
+
+        // Handle form submission event
+        $('#frm-DocumentsItemAssocaition').on('submit', function (e) {
+            var form = this;
+
+            // Iterate over all checkboxes in the table
+            table.$('input[type="checkbox"]').each(function () {
+                // If checkbox doesn't exist in DOM
+                if (!$.contains(document, this)) {
+                    // If checkbox is checked
+                    if (this.checked) {
+                        // Create a hidden element
+                        $(form).append(
+                            $('<input>')
+                                .attr('type', 'hidden')
+                                .attr('name', this.name)
+                                .val(this.value)
+                        );
+                    }
+                }
+            });
+        });
+
+
+    });
+
+
+
+    function ConfiguredataTables( TableName,  url,datasource)
+    {
+
+        var table = $('#' + TableName+'').DataTable({
+            'ajax': {
+                //'url': '/data/AssociatedItemData.txt',
+                'url': url,
+
+           //     'dataSrc': 'AssociatedItemData'
+                'dataSrc': datasource
+
+            },
+            'columnDefs': [{
+                'targets': 0,
+                'searchable': false,
+                'orderable': false,
+                'className': 'dt-body-center',
+                'render': function (data, type, full, meta) {
+                    return '<input type="checkbox" class="' + TableName+'"+"checkd" name= "id[]" value= "' + $('<div/>').text(data).html() + '" > ';
+                }
+            }],
+
+            'order': [[1, 'asc']]
+        });
+
+
+        // Handle click on "Select all" control
+
+        $('#' + TableName+ '- select - all').on('click', function () {
+
+            // Get all rows with search applied
+            var rows = table.rows({ 'search': 'applied' }).nodes();
+            // Check/uncheck checkboxes for all rows in the table
+            $('input[type="checkbox"]', rows).prop('checked', this.checked);
+        });
+
+        // Handle click on checkbox to set state of "Select all" control
+        $('#' + TableName + ' tbody').on('change', 'input[type="checkbox"]', function () {
+            // If checkbox is not checked
+            if (!this.checked) {
+                var el = $('#' + TableName+ '-select-all').get(0);
+                // If "Select all" control is checked and has 'indeterminate' property
+                if (el && el.checked && ('indeterminate' in el)) {
+                    // Set visual state of "Select all" control
+                    // as 'indeterminate'
+                    el.indeterminate = true;
+                }
+            }
+        });
+
+        // Handle form submission event
+        $('#frm-' + TableName+'').on('submit', function (e) {
+            var form = this;
+
+            // Iterate over all checkboxes in the table
+            table.$('input[type="checkbox"]').each(function () {
+                // If checkbox doesn't exist in DOM
+                if (!$.contains(document, this)) {
+                    // If checkbox is checked
+                    if (this.checked) {
+                        // Create a hidden element
+                        $(form).append(
+                            $('<input>')
+                                .attr('type', 'hidden')
+                                .attr('name', this.name)
+                                .val(this.value)
+                        );
+                    }
+                }
+            });
+        });
+
+
+    };
+
+
+   
+
+
+</script>
+
+
+
+</head>
+<body>
+
+    <table id="maincontainer" width="100%">
+        <tr>
+            <td width="40%">
+
+                <table id="DocumentsTable" class="display select" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" name="select_all" value="1" id="DocumentsTable-select-all"></th>
+                            <th>DocName</th>
+                            <th>CreatedDate</th>
+
+                        </tr>
+                    </thead>
+   
+                </table>
+
+
+            </td>
+
+            <td width="35%">
+
+
+                <table id="DocumentsItemAssocaition" class="display select" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" name="select_all" value="1" id="DocumentsItemAssocaition-select-all"></th>
+
+                            <th >
+                                DocName
+                            </th>
+
+                            <th >
+                                ItemName
+                            </th>
+
+                            <th>
+                                CreatedDate
+                            </th>
+                        </tr>
+
+                </table>
+
+
+            </td>
+
+
+            <td width="30%">
+
+                <table id="ItemTable" class="display select" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" name="select_all" value="1" id="ItemTable-select-all"></th>
+
+                            <th>
+                                ItemName
+                            </th>
+
+                            <th>
+                                HsCode
+                            </th>
+
+                            <th>
+                                CreatedDate
+                            </th>
+                        </tr>
+
+                </table>
+
+
+
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

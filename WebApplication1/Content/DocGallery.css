@@ -1,0 +1,189 @@
+﻿     html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            border: none;            
+        }
+
+        .GALLERY {
+            width: 99%;
+            height: 99%;
+            border-collapse: collapse;
+            background-color: silver;
+            
+        }
+
+.GALLERYCELLS {
+    border: thin solid;
+    border-color: lightgray;
+    overflow: hidden;
+    /*min-width: 222px;*/
+   padding-bottom:3%;
+}
+        .DOCVIEWER {
+                width: 100%;
+                height: 100%;
+        }
+
+.DOCTYPETABLE {
+    width: 120%;
+    /*width: 100%;*/
+    border-collapse: separate;
+}
+
+        .DOCTYPE {
+            background-color: lightgrey;
+            overflow: hidden;
+            min-width: 100px;
+            border: thin solid;
+            border-color: lightgrey;
+        }
+
+        .DOCTYPE:hover {
+            color: darkblue;
+            background-color: silver;
+            cursor: pointer;
+            border: thin solid;
+            border-color: black;
+            font-weight:bold;
+        }
+
+        .DOCTYPE_SELECTED {
+            background-color: darkgrey;
+            overflow: hidden;
+            min-width: 100px;
+            border: thin solid;
+            border-color: lightgrey;
+            font-weight:bold;
+        }
+        .DOCTYPE_SELECTED:hover {
+            border-color: black;
+            cursor:pointer;
+        }
+
+        .DocNamesContainerTitle {
+            color:white;
+            font-weight:bold;
+            background-color:ThreeDDarkShadow;
+        }
+        .DocNamesContainerTitle:hover {
+            color:darkblue;
+            font-weight:bold;
+            cursor:default;
+        }
+
+        .DOCNAMESDIV {
+            height: 100%;
+            overflow:hidden;
+            border:thin solid;   
+            display1:flexbox;  
+        }
+
+
+        .DOCNAMES {
+            height: 100%;
+            border-spacing: 5px;
+            border-collapse: separate;            
+        }
+
+        .DOCNAMECELL {
+            background-color: lightgrey;
+            height: 100%;
+            min-width: 150px;
+            text-align: center;
+            overflow: hidden;
+            border: thin solid;
+            border-color: lightgrey;
+        }
+
+        .DOCNAMECELL:hover {
+            background-color: silver;
+            cursor: pointer;
+            border-color: black;
+            color:darkblue;
+            font-weight:bold;
+        }
+
+        .DOCNAMECELL_SELECTED {
+            background-color: darkgray;
+            height: 100%;
+            min-width: 150px;
+            text-align: center;
+            overflow: hidden;
+            border: thin solid;
+            border-color: lightgrey;
+            font-weight:bold;
+        }
+
+        .DOCNAMECELL_SELECTED:hover {           
+            border-color: black;
+            color:darkblue;
+            font-weight:bold;
+
+        }
+
+        .DOCNAME {
+            height: 100%;
+            min-width: 100px;
+            max-width: 100px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .DOCNAME:hover {
+            color: darkblue;
+            cursor: pointer;
+        }
+
+        .IMAGEBTNCELL {
+            vertical-align:middle;
+            background-color: ThreeDDarkShadow;
+        }
+
+         .IMAGEBTN {
+            background-color: ThreeDDarkShadow;
+            height:20px; 
+            width:20px;
+            margin-left:5px;
+            margin-right:5px;
+            border: thin solid;
+            border-color: ThreeDDarkShadow;
+        }
+
+       .IMAGEBTN:hover {
+            background-color:silver;
+            cursor: pointer;
+            border: thin solid;
+            border-color: black;
+        }      
+
+        .REVIEWSTATUS {
+            width:20px;
+            height:20px;
+            border:thin solid;
+            border-color: transparent;           
+            padding-left:5px; 
+            padding-right:5px;
+        }
+
+       .REVIEWSTATUS:hover {
+            border-color: black;
+       }
+
+       .SCROLLBTN {
+            border: thin solid;
+            background-color:lightgray;
+            border-color: lightgray;
+            border-collapse: separate;
+            height:90%;
+            width:20px;
+            vertical-align:middle         
+        }
+        .SCROLLBTN:hover {
+            border-color: black;
+            background-color:silver;
+        }
+
+
+ 
+       

@@ -1,0 +1,281 @@
+﻿@model WebApplication1.Models.FileModel
+
+
+@{
+    ViewBag.Title = "MultiUpload";
+}
+
+
+
+<style type="text/css">
+    .highlightRow {
+        background-color: #ffeb95;
+        cursor: pointer;
+    }
+
+    .panelclass {
+        margin-top: -158px;
+    }
+
+    .style1 {
+        width: 613px;
+        margin-left: 40px;
+    }
+
+    #Button {
+        height: 22px;
+    }
+
+    #RmvButton {
+        height: 20px;
+        width: 71px;
+    }
+
+    .style4 {
+        width: 613px;
+    }
+
+    #RmvButton0 {
+        height: 21px;
+    }
+
+    #RmvButton0 {
+        height: 21px;
+        width: 57px;
+    }
+
+    #Btnaddfile {
+        height: 22px;
+        width: 82px;
+    }
+</style>
+
+<link href="~/Content/Blue.css" rel="stylesheet" />
+@{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+    {
+        Text = "Exemplo1",
+        Value = "Exemplo1"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Exemplo2",
+        Value = "Exemplo2",
+        Selected = true
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Exemplo3",
+        Value = "Exemplo3"
+    });
+}
+
+
+@using (Html.BeginForm("UploadFiles", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.SelectedFileId) <br />
+    <input type="hidden" id="texens" name="user" value="texens" />
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+
+
+
+
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            <div id="Header">
+                <table width="100%" cellpadding="0" cellspacing="0" style="margin-left: 16px;">
+                    <tbody>
+                        <tr width="100%">
+
+                            <td valign="bottom" class="SubTitleHeader div12" height="24" width="27%" nowrap align="left">
+                                <table style="padding-bottom: 0px; padding-top: 0px; padding-left: 0px; padding-right: 0px"
+                                       cellspacing="0" cellpadding="0" width="100%" type="formheader;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="line-height: 24px; color: #000; font-weight: bold; font-size: 12px; padding-left: 11px;font-family: Arial,Verdana, Helvetica, sans-serif;">
+                                                Upload Documents
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td valign="bottom" width="35">
+                                <div class="div13">
+                                </div>
+                            </td>
+
+
+
+                            <td class="TitleHeader" valign="bottom" width="100%">
+                                &nbsp;
+                            </td>
+
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <table>
+                <tr>
+                <tr></tr>
+
+                <tr>
+                    <td>
+
+                        @Html.Label("Document Type ", "Document Type :", new { @class = "form_field_label", style = "padding-left:50px" })
+
+                    </td>
+                    <td>
+                        @Html.DropDownListFor(model => model.listofuploadedFiles, listItems, new { @disabled = "disabled", style = "width:413px;   Height:28px" })
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.files, htmlAttributes: new { @class = "control-label col-md-2", style = "width:180px" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.files, "", new { @type = "file", @multiple = "multiple", style = "width:280px", @id = "MultiFiles", accept = "application/pdf" })
+
+            </td>
+            <td>
+                <input type="button" value="Remove" class="mcbutton" id="remove" />
+            </td>
+
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                "Note:Maximum file size of 500 KB is allowed and only pdf file types are allowed"
+
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2", style = "width:180px" })
+
+            <td>
+
+                @Html.TextAreaFor(Model => Model.Description, new { @id = "TxtDescrition", style = "width:280px;height:50px" })
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                <div class="col-md-offset-2 col-md-10" style="margin-left:90.66%">
+                    <input type="submit" value="Upload" id="UploadBtn" class="mcbutton" />
+
+                </div>
+
+
+            </td>
+            <td></td>
+            <td style="margin-left:40.66%">
+                @Html.ActionLink("View All Uploaded", "Downloads", "Home")
+
+            </td>
+        </tr>
+
+
+    </table>
+
+</div>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10 text-success">
+        @*@ViewBag.UploadStatus*@
+
+        @if (Model != null)
+                {
+                    if (Model.UploadStatus != null)
+                    {
+                <div id="Uplodstatus">
+                    @Html.DisplayFor(Model => Model.UploadStatus)
+                </div>
+            }
+            else
+            {
+
+
+                @Html.DisplayFor(Model => Model.DeletedStatus)
+
+
+            }
+
+        }
+    </div>
+</div>
+<table width="100%" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr width="100%">
+            <td valign="bottom" width="8">
+                <div class="div11">
+                </div>
+            </td>
+            <td valign="bottom" class="SubTitleHeader div12" height="24" width="27%" nowrap align="left">
+                <table style="padding-bottom: 0px; padding-top: 0px; padding-left: 0px; padding-right: 0px"
+                       cellspacing="0" cellpadding="0" width="100%" type="formheader;">
+                    <tbody>
+                        <tr>
+                            <td style="line-height: 24px; color: #000; font-weight: bold; font-size: 12px; font-family: Arial,Verdana, Helvetica, sans-serif;">
+                                Documents List
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td valign="bottom" width="35">
+                <div class="div13">
+                </div>
+            </td>
+            <td class="TitleHeader" valign="bottom" width="100%">
+                &nbsp;
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <table id="someId"></table>
+
+</div>
+
+
+</div>
+    <div>
+
+    </div>
+    <div id="partialUploaded">
+
+
+        @Html.Partial("_UploadedFiles", Model)
+
+
+
+
+    </div>
+    <input type="submit" value="Delete" id="DeleteBtn" class="mcbutton" />
+
+
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script src="~/Scripts/PartialUp.js"></script>
+<script src="@Url.Content("~/Scripts/Upload.js")"></script>
+
+

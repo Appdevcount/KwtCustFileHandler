@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BAEC0473-6350-4F35-81B1-6CC4ABB5AEA9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CryptographyKGAC">
+      <HintPath>.\CryptographyKGAC.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroClear.EnterpriseSolutions">
+      <HintPath>..\MicroClear.EnterpriseSolutions.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroClear.EnterpriseSolutions.CounterService">
+      <HintPath>.\MicroClear.EnterpriseSolutions.CounterService.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroClear.EnterpriseSolutions.CryptographyServices">
+      <HintPath>.\MicroClear.EnterpriseSolutions.CryptographyServices.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroClear.EnterpriseSolutions.ServiceFactories">
+      <HintPath>.\MicroClear.EnterpriseSolutions.ServiceFactories.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList">
+      <HintPath>.\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>.\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="RichTextEditor">
+      <HintPath>.\RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\..\Upload file\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TokenGeneration">
+      <HintPath>..\..\..\new hyd\Token\TokenGeneration\TokenGeneration\bin\Debug\TokenGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\captions.ar.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>captions.ar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\captions.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>captions.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controllers\CommericalController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DBObjects\SQLDataAccessHelper.cs" />
+    <Compile Include="DBObjects\SQLHelper.cs" />
+    <Compile Include="DocumentEmpty.aspx.cs">
+      <DependentUpon>DocumentEmpty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentEmpty.aspx.designer.cs">
+      <DependentUpon>DocumentEmpty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentError.aspx.cs">
+      <DependentUpon>DocumentError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentError.aspx.designer.cs">
+      <DependentUpon>DocumentError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentGallery.aspx.cs">
+      <DependentUpon>DocumentGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentGallery.aspx.designer.cs">
+      <DependentUpon>DocumentGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentRenderError.aspx.cs">
+      <DependentUpon>DocumentRenderError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentRenderError.aspx.designer.cs">
+      <DependentUpon>DocumentRenderError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Intermediate.aspx.cs">
+      <DependentUpon>Intermediate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Intermediate.aspx.designer.cs">
+      <DependentUpon>Intermediate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ItemAssociation.aspx.cs">
+      <DependentUpon>ItemAssociation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ItemAssociation.aspx.designer.cs">
+      <DependentUpon>ItemAssociation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modalbasic.aspx.cs">
+      <DependentUpon>modalbasic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modalbasic.aspx.designer.cs">
+      <DependentUpon>modalbasic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BAL\BuisnessUploads.cs" />
+    <Compile Include="Models\DAL\SQLHelper.cs" />
+    <Compile Include="Models\ErrorLogger.cs" />
+    <Compile Include="Models\ImpersonatedUser.cs" />
+    <Compile Include="Models\Impersonator.cs" />
+    <Compile Include="Models\Upolad.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenderFile.aspx.cs">
+      <DependentUpon>RenderFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RenderFile.aspx.designer.cs">
+      <DependentUpon>RenderFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Global.Designer.cs">
+      <DependentUpon>Global.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\GlobalAra.Designer.cs">
+      <DependentUpon>GlobalAra.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="TestSession.aspx.cs">
+      <DependentUpon>TestSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestSession.aspx.designer.cs">
+      <DependentUpon>TestSession.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CheckDatatables.html" />
+    <Content Include="CheckDatatablesBKUP.html" />
+    <Content Include="Commericial.html" />
+    <Content Include="Content\arrows.png" />
+    <Content Include="Content\Blue.css" />
+    <Content Include="Content\Blue_ara.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Chk.css" />
+    <Content Include="Content\datatables.css" />
+    <Content Include="Content\datatables.min.css" />
+    <Content Include="Content\DocGallery.css" />
+    <Content Include="Content\FixedColumnForDataTable.css" />
+    <Content Include="Content\Green.css" />
+    <Content Include="Content\Green_ara.css" />
+    <Content Include="Content\Orange.css" />
+    <Content Include="Content\Orange_ara.css" />
+    <Content Include="Content\Purple.css" />
+    <Content Include="Content\Purple_ara.css" />
+    <Content Include="Content\Red.css" />
+    <Content Include="Content\Red_ara.css" />
+    <Content Include="Content\dataTables.bootstrap.css" />
+    <Content Include="Content\slimtable.css" />
+    <Content Include="Content\Upload.css" />
+    <Content Include="data1.txt" />
+    <Content Include="data\AssociateditemData.txt" />
+    <Content Include="data\Checkdata.txt" />
+    <Content Include="data\data1.txt" />
+    <Content Include="data\ItemHsCodedata.txt" />
+    <Content Include="data\jsondata.txt" />
+    <Content Include="DocumentEmpty.aspx" />
+    <Content Include="DocumentError.aspx" />
+    <Content Include="DocumentGallery.aspx" />
+    <Content Include="DocumentRenderError.aspx" />
+    <Content Include="example - 2.htm" />
+    <Content Include="example - working.htm" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\Arrow.png" />
+    <Content Include="Images\Filter.png" />
+    <Content Include="Images\Green\clip_middle.png" />
+    <Content Include="Images\Green\clip_payment_LTR.png" />
+    <Content Include="Images\Green\clip_payment_RTL.png" />
+    <Content Include="Images\Green\curve_SectionHeading_LTR.png" />
+    <Content Include="Images\Green\curve_SectionHeading_RTL.png" />
+    <Content Include="Images\Green\rt.png" />
+    <Content Include="Images\Green\spacer.gif" />
+    <Content Include="Images\iconFilter.png" />
+    <Content Include="Images\Orange\clip_middle.png" />
+    <Content Include="Images\Orange\clip_payment_LTR.png" />
+    <Content Include="Images\Orange\clip_payment_RTL.png" />
+    <Content Include="Images\Orange\curve_SectionHeading_LTR.png" />
+    <Content Include="Images\Orange\curve_SectionHeading_RTL.png" />
+    <Content Include="Images\Orange\rt.png" />
+    <Content Include="Images\Orange\spacer.gif" />
+    <Content Include="Images\Purple\clip_middle.png" />
+    <Content Include="Images\Purple\clip_payment_LTR.png" />
+    <Content Include="Images\Purple\clip_payment_RTL.png" />
+    <Content Include="Images\Purple\curve_SectionHeading_LTR.png" />
+    <Content Include="Images\Purple\curve_SectionHeading_RTL.png" />
+    <Content Include="Images\Purple\rt.png" />
+    <Content Include="Images\Purple\spacer.gif" />
+    <Content Include="Images\Red\clip_middle.png" />
+    <Content Include="Images\Red\clip_payment_LTR.png" />
+    <Content Include="Images\Red\clip_payment_RTL.png" />
+    <Content Include="Images\Red\curve_SectionHeading_LTR.png" />
+    <Content Include="Images\Red\curve_SectionHeading_RTL.png" />
+    <Content Include="Images\Red\rt.png" />
+    <Content Include="Images\Red\spacer.gif" />
+    <Content Include="Images\Rs_AddDocs.png" />
+    <Content Include="Images\Rs_AdditionalDocIcon.png" />
+    <Content Include="Images\RS_Approveds.png" />
+    <Content Include="Images\Blue\clip_middle.png" />
+    <Content Include="Images\Blue\clip_payment_LTR.png" />
+    <Content Include="Images\Blue\clip_payment_RTL.png" />
+    <Content Include="Images\Blue\curve_SectionHeading_LTR.png" />
+    <Content Include="Images\Blue\curve_SectionHeading_RTL.png" />
+    <Content Include="Images\Blue\rt.png" />
+    <Content Include="Images\Blue\spacer.gif" />
+    <Content Include="Images\close-icon.png" />
+    <Content Include="Images\RS_NotApproved.png" />
+    <Content Include="Images\RS_NotRejected.png" />
+    <Content Include="Images\RS_NotReviewed.png" />
+    <Content Include="Images\RS_Rejected.png" />
+    <Content Include="Images\RS_Reviewed.png" />
+    <Content Include="Images\save-icon.png" />
+    <Content Include="Images\scrollleft.png" />
+    <Content Include="Images\scrollright.png" />
+    <Content Include="index5.html" />
+    <Content Include="Intermediate.aspx" />
+    <Content Include="ItemAssociation.aspx" />
+    <Content Include="modalbasic.aspx" />
+    <Content Include="RenderFile.aspx" />
+    <Content Include="Scripts\1.12.4.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\CheckBoxDataTables.js" />
+    <Content Include="Scripts\Commercial.js" />
+    <Content Include="Scripts\DataTableMultiselect.js" />
+    <Content Include="Scripts\dataTables.bootstrap.js" />
+    <Content Include="Scripts\datatbles1.10.js" />
+    <Content Include="Scripts\DocGallery.js" />
+    <Content Include="Scripts\DocGallery2.js" />
+    <Content Include="Scripts\DocGallery3.js" />
+    <Content Include="Scripts\DocGallery4.js" />
+    <Content Include="Scripts\DocGalleryData.js" />
+    <Content Include="Scripts\Elipses.js" />
+    <Content Include="Scripts\DocumentsData.js" />
+    <Content Include="Scripts\Jquery-1.12.0.min.js" />
+    <Content Include="Scripts\jquery-latest.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.tablesorter.js" />
+    <Content Include="Scripts\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\PartialUp.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\slimtable.js" />
+    <Content Include="Scripts\test.js" />
+    <Content Include="Scripts\Upload.js" />
+    <Content Include="Scripts\Upload2.js" />
+    <Content Include="style5.css" />
+    <Content Include="TestSession.aspx" />
+    <Content Include="viewdoc\doctypes.xml" />
+    <Content Include="viewdoc\uploadedDocumentsSet.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Upload.cshtml" />
+    <Content Include="Views\Home\Download.cshtml" />
+    <Content Include="Views\Home\UploadFiles.cshtml" />
+    <Content Include="Views\Shared\_UploadedFiles.cshtml" />
+    <Content Include="Views\Shared\Testpartial.cshtml" />
+    <Content Include="Views\Home\TestAjax.cshtml" />
+    <Content Include="Views\Home\testDatatable.cshtml" />
+    <Content Include="Views\Home\TestUploadView.cshtml" />
+    <Content Include="Views\Home\tesTUploadFiles.cshtml" />
+    <Content Include="Views\Shared\AuthenticationError.cshtml" />
+    <Content Include="viewdoc\Book2.xlsx" />
+    <Content Include="Views\Home\CommercialItems.cshtml" />
+    <Content Include="Views\Home\CommericalView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\BAL\" />
+    <Folder Include="App_Data\DAL\" />
+    <Folder Include="App_Data\DATA\" />
+    <Folder Include="Views\Commerical\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\captions.ar.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>captions.ar.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\captions.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>captions.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Global.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Global.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\GlobalAra.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalAra.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56769</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56770/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

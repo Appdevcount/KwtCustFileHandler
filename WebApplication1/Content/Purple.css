@@ -1,0 +1,71 @@
+.TitleHeader
+{
+	border-bottom:solid 5px #D561D8;
+	/*BACKGROUND-COLOR: #814F92;*/
+}
+.templatetables 
+{	
+	border-bottom: 1px solid #814F92;
+	border-right: 1px solid #814F92;
+	border-left: 1px solid #814F92;
+	border-top:1px solid #814F92;
+}
+.mcbutton {
+    margin: 0 10px 0 0;
+    font-family: verdana,sans-serif;
+    font-size: 12px;
+    background: #C059C2;
+    border-bottom: 1px solid #104A7B;
+    border-right: 1px solid #104A7B;
+    border-left: 1px solid #AFC4D5;
+    border-top: 1px solid #AFC4D5;
+    color: white;
+    height: 19px;
+    text-decoration: none;
+    cursor: hand;
+}  
+.SubTitleHeader {
+	FONT-FAMILY: Tahoma, Arial,Verdana, Arial; 
+	FONT: bold 8pt/20px;
+	COLOR: white;
+	/*BACKGROUND-COLOR: #814F92;*/
+	/*filter: progid:DXImageTransform.Microsoft.Alpha( Opacity=100, FinishOpacity=60, Style=1, StartX=100,  FinishX=100, StartY=60, FinishY=0);	*/
+}
+.DataGridAlternate_Row {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: black; FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif; BACKGROUND-COLOR: #f6f7f8
+}
+.DataGridItem_Row {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: black; FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif; BACKGROUND-COLOR: #F8E0F8
+}
+
+.DataGridItem_Row_Selected {
+	FONT-WEIGHT: normal; /*FONT-SIZE: 11px;*/ 
+    COLOR: black; FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif; BACKGROUND-COLOR: #E1ECFC
+}
+
+.DataGridItem_Row_Highlited{
+	FONT-WEIGHT: normal; /*FONT-SIZE: 11px;*/
+    COLOR: black; FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif; BACKGROUND-COLOR: #fff7e5
+}
+
+.div5
+{
+	background:url(../Images/Purple/clip_middle.png); height:24px; text-align:left;FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif;FONT-WEIGHT:BOLD;font-size: 12px;
+}
+.div6 tr:hover
+{
+	background-color: #D29CD5;
+}
+.div11
+{
+  border:0px; background:url(../Images/Purple/clip_payment_LTR.png) repeat-x; height:24px; width:8px;
+}
+.div12
+{
+	HEIGHT: 24px; background-position:center bottom; background-repeat:repeat-x; BACKGROUND-IMAGE: url(../Images/Purple/clip_middle.png);
+}
+.div13
+{
+	border:0; 
+	background:url(../images/Purple/curve_SectionHeading_LTR.png) repeat-x; height:24px; width:35px;
+}

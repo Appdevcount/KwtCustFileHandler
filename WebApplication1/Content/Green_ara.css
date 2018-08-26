@@ -1,0 +1,95 @@
+.templatetables 
+{	
+	border-bottom: 1px solid #b5e248;
+	border-right: 1px solid #b5e248;
+	border-left: 1px solid #b5e248;
+	border-top:1px solid #b5e248;
+}
+
+.mcbutton {
+    margin: 0 10px 0 0;
+    font-family: verdana,sans-serif;
+    font-size: 12px;
+    background: #6A9E1B;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid #cbd3d6;
+    border-top: 1px solid #cbd3d6;
+    color: black;
+    height: 19px;
+    text-decoration: none;
+    cursor: hand;
+} 
+
+.SubTitleHeader {
+	FONT-FAMILY: Tahoma, Arial,Verdana, Arial; 
+	FONT: bold 8pt/20px;
+	COLOR: white;
+	/*BACKGROUND-COLOR: #B5E248;*/
+	/*filter: progid:DXImageTransform.Microsoft.Alpha( Opacity=100, FinishOpacity=30, Style=1, StartX=100,  FinishX=100, StartY=60, FinishY=0);	*/
+}
+.TitleHeader
+{
+	border-bottom:solid 5px #A8DE4A;
+	/*BACKGROUND-COLOR: #B5E248;*/
+}
+.form_field_label
+{
+	PADDING-LEFT: 5px;
+    COLOR: black;
+	FONT: bold 7.5pt/20px verdana;
+	BACKGROUND-COLOR: #ffffff;
+}
+
+.DataGridAlternate_Row {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #0f0f0f; FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif; BACKGROUND-COLOR: #f6f7f8
+}
+.DataGridItem_Row {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #0f0f0f; FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif; BACKGROUND-COLOR: #f3fcee
+}
+
+.DataGridItem_Row_Selected {
+	FONT-WEIGHT: normal; /*FONT-SIZE: 11px;*/ COLOR: #0f0f0f; FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif; BACKGROUND-COLOR: #E1ECFC
+}
+
+.DataGridItem_Row_Highlited {
+	FONT-WEIGHT: normal; /*FONT-SIZE: 11px;*/ COLOR: #0f0f0f; FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif; BACKGROUND-COLOR: #fff7e5
+}
+
+.div5
+{
+	background:url(../Images/Green/clip_middle.png); height:24px; text-align:right;FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif;FONT-WEIGHT:BOLD;font-size: 12px;
+}
+.div6 tr:hover
+{
+	background-color: #E1F3C1;
+}
+.buttonupload
+{
+	margin:0 10px 0 0; 
+	font-family:verdana,sans-serif;
+	font-size:10px;  
+	background: #B5E248;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	border-left: 1px solid #cbd3d6;
+	border-top:1px solid #cbd3d6;
+	color:black;
+	height:19px;
+	text-decoration:none;
+	cursor: hand; float:right;
+}
+
+.div11
+{
+  border:0px; background:url(../Images/Green/clip_payment_RTL.png) repeat-x; height:24px; width:8px;
+}
+.div12
+{
+	HEIGHT: 24px; background-position:center bottom; background-repeat:repeat-x; BACKGROUND-IMAGE: url(../Images/Green/clip_middle.png);
+}
+.div13
+{
+	border:0; 
+	background:url(../images/Green/curve_SectionHeading_RTL.png) repeat-x; height:24px; width:35px;
+}

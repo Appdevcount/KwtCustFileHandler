@@ -1,0 +1,848 @@
+﻿
+
+@model WebApplication1.Models.FileModel
+
+
+
+
+<style type="text/css">
+    a {
+        /*padding-left:1.8em;*/
+    }
+
+    /*.dataTables_wrapper .dataTables_paginate {
+        float: none;
+        text-align: center;
+        padding-top: 0.25em;
+    }
+
+
+    a.paginate_button {
+        background-color: aqua !important;
+    }
+
+        a.paginate_button:hover {
+            background-color: orange !important;
+        }
+
+        a.paginate_button.current {
+            background-color: red !important;
+            color: green !important;
+        }*/
+    .dataTables_filter {
+        display: none;
+    }
+
+    .focus {
+        background-color: #ff00ff;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .selected {
+        background-color: #ff00ff;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .asc:after {
+        content: "\25B2";
+    }
+
+    .desc:after {
+        content: "\25BC";
+    }
+
+    .table {
+        border: 1px solid #ddd;
+    }
+
+
+    .pg-normal {
+        color: #000000;
+        font-size: 15px;
+        cursor: pointer;
+        background: #D0B389;
+        padding: 2px 4px 2px 4px;
+    }
+
+    .pg-selected {
+        color: #fff;
+        font-size: 15px;
+        background: #000000;
+        padding: 2px 4px 2px 4px;
+    }
+
+    table.yui {
+        font-family: arial;
+        border-collapse: collapse;
+        border: solid 3px #7f7f7f;
+        font-size: small;
+    }
+
+        table.yui td {
+            padding: 5px;
+            border-right: solid 1px #7f7f7f;
+        }
+
+        table.yui .even {
+            background-color: #EEE8AC;
+        }
+
+        table.yui .odd {
+            background-color: #F9FAD0;
+        }
+
+        table.yui th {
+            border: 1px solid #7f7f7f;
+            padding: 5px;
+            height: auto;
+            background: #D0B389;
+        }
+
+            table.yui th a {
+                text-decoration: none;
+                text-align: center;
+                padding-right: 20px;
+                font-weight: bold;
+                white-space: nowrap;
+            }
+
+        table.yui tfoot td {
+            border-top: 1px solid #7f7f7f;
+            background-color: #E1ECF9;
+        }
+
+        table.yui thead td {
+            vertical-align: middle;
+            background-color: #E1ECF9;
+            border: none;
+        }
+
+        table.yui thead .tableHeader {
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        table.yui thead .filter {
+            text-align: right;
+        }
+
+        table.yui tfoot {
+            background-color: #E1ECF9;
+            text-align: center;
+        }
+
+        table.yui .tablesorterPager {
+            padding: 10px 0 10px 0;
+        }
+
+            table.yui .tablesorterPager span {
+                padding: 0 5px 0 5px;
+            }
+
+            table.yui .tablesorterPager input.prev {
+                width: auto;
+                margin-right: 10px;
+            }
+
+            table.yui .tablesorterPager input.next {
+                width: auto;
+                margin-left: 10px;
+            }
+
+        table.yui .pagedisplay {
+            font-size: 10pt;
+            width: 30px;
+            border: 0px;
+            background-color: #E1ECF9;
+            text-align: center;
+            vertical-align: top;
+        }
+</style>
+@*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+
+
+@*<script src="~/Scripts/jquery-3.2.1.min.js"></script>*@
+
+@*<script src="~/Scripts/datatbles1.10.js"></script>*@
+@*<script src="~/Scripts/jquery.dataTables.js"></script>*@
+
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+@*<script src="~/Scripts/jquery-latest.js"></script>*@
+
+
+
+
+
+@*<link href="~/Content/Blue.css" rel="stylesheet" />*@
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        if (getlanguageforalert == 'eng') {
+            //prev = 'prev';
+            // next = 'next';
+
+            $("#Uploadedfileslist_previous").text("<prev");
+
+            $("#Uploadedfileslist_next").text("next>");
+
+            $("#Uploadedfileslist_first").text("<<First");
+
+            $("#Uploadedfileslist_last").text("Last>>");
+
+        }
+        else {
+
+            //$("#Uploadedfileslist_previous").text("<السابق");
+
+            //$("#Uploadedfileslist_next").text(">التالى");
+
+            //$("#Uploadedfileslist_first").text("<<أول");
+
+            //$("#Uploadedfileslist_last").text("الاخير>>");
+
+
+
+            $("#Uploadedfileslist_previous").text("السابق");
+
+            $("#Uploadedfileslist_next").text("التالي");
+
+            $("#Uploadedfileslist_first").text("الأولى");
+
+
+            $("#Uploadedfileslist_last").text("الأخيرة");
+
+
+            //  prev = 'السابق';
+            //  next = 'التالى';
+        }
+        $(".mcbutton").css('font-size', '12px');
+
+
+        $("#Uploadedfileslist_paginate").css('text-align', 'center');
+
+        $("#Uploadedfileslist_first").removeClass("paginate_button first disabled").addClass("mcbutton first disabled");
+
+
+        $("#Uploadedfileslist_last").removeClass("paginate_button last").addClass("mcbutton last");
+
+
+        $("#Uploadedfileslist_next").removeClass("paginate_button next disabled").addClass("mcbutton disabled");
+
+        $("#Uploadedfileslist_previous").removeClass("paginate_button previous disabled").addClass("mcbutton disabled");
+
+        // $( "#Uploadedfileslist_previous" ).removeClass( "paginate_button current" ).addClass( "mcbutton" );
+
+        $("#Uploadedfileslist_paginate span a").removeClass("paginate_button").addClass("mcbutton");
+
+        $("#Uploadedfileslist_paginate span a.current.mcbutton").css({ "background-color": "#333", "color": "#FFF" });
+
+        var x = $("#Uploadedfileslist_paginate span a").last().text();
+        $("#Uploadedfileslist_paginate span a").last().text(x + " ");
+
+    });
+
+    // document.getElementById('pageNavPosition').style.visibility = 'hidden';
+    var getlanguageforalert = document.getElementById('languageAlert').value;
+    var prev = '';
+    var next = '';
+    if (getlanguageforalert == 'eng') {
+        prev = 'prev';
+        next = 'next';
+
+    }
+    else {
+        prev = 'السابق';
+        next = 'التالى';
+    }
+
+
+    function Pager(tableName, itemsPerPage) {
+
+        this.tableName = tableName;
+
+        this.itemsPerPage = itemsPerPage;
+
+        this.currentPage = 1;
+
+
+        this.pages = 0;
+
+        this.inited = false;
+
+        this.showRecords = function (from, to) {
+
+            var rows = document.getElementById(tableName).rows;
+            if (rows.length > 7) {
+                document.getElementById('pageNavPosition').style.display = 'block';
+
+            }
+
+
+            // i starts from 1 to skip table header row
+
+            for (var i = 1; i < rows.length; i++) {
+
+                if (i < from || i > to)
+
+                    rows[i].style.display = 'none';
+
+                else
+
+                    rows[i].style.display = '';
+
+            }
+
+        }
+
+        this.showPage = function (pageNumber) {
+
+            if (!this.inited) {
+
+                alert("not inited");
+
+                return;
+
+            }
+
+            var oldPageAnchor = document.getElementById('pg' + this.currentPage);
+
+            oldPageAnchor.className = 'mcbutton';
+
+            this.currentPage = pageNumber;
+
+            var newPageAnchor = document.getElementById('pg' + this.currentPage);
+
+            newPageAnchor.className = 'pg-selected';
+
+            var from = (pageNumber - 1) * itemsPerPage + 1;
+
+            var to = from + itemsPerPage - 1;
+
+            this.showRecords(from, to);
+
+        }
+
+        this.prev = function () {
+
+            if (this.currentPage > 1)
+
+                this.showPage(this.currentPage - 1);
+
+        }
+
+        this.next = function () {
+
+            if (this.currentPage < this.pages) {
+
+                this.showPage(this.currentPage + 1);
+
+            }
+
+        }
+
+        this.init = function () {
+
+            var rows = document.getElementById(tableName).rows;
+
+            var records = (rows.length - 1);
+
+            this.pages = Math.ceil(records / itemsPerPage);
+
+            this.inited = true;
+
+        }
+
+        this.showPageNav = function (pagerName, positionId) {
+
+            if (!this.inited) {
+
+                alert("not inited");
+
+                return;
+
+            }
+
+            var element = document.getElementById(positionId);
+
+            var pagerHtml = '<span onclick="' + pagerName + '.prev();" style="font-size: 13px;" class="mcbutton"> « ' + prev + ' </span> ';
+
+            for (var page = 1; page <= this.pages; page++)
+
+                pagerHtml += '<span id="pg' + page + '" class="mcbutton" style="font-size: 13px;" onclick="' + pagerName + '.showPage(' + page + ');">' + page + '</span> ';
+
+            pagerHtml += '<span onclick="' + pagerName + '.next();" style="font-size: 13px;" class="mcbutton"> ' + next + ' »</span > ';
+
+            element.innerHTML = pagerHtml;
+
+        }
+
+    }
+
+</script>
+
+
+
+@if (Model != null)
+{
+    if (ViewBag.languageculture == "eng")
+    {
+
+        <table id="Uploadedfileslist" class="table">
+            <thead>
+                <tr>
+                    @if (Model.islocked != "yes")
+
+                    {
+                        <th><input type="checkbox" id="headercheck" /></th>
+                    }
+
+                    <th> <u>@Resources.Global.FileName</u></th>
+                    <th><u>@Resources.Global.Description</u></th>
+                    <th><u>@Resources.Global.UploadedDate</u></th>
+
+                    <th>@Resources.Global.DocumentsType</th>
+                    <th>@Resources.Global.CreatedBy</th>
+                    <th>@Resources.Global.ViewDownload</th>
+
+                    @*@if (Model.ItemAssocitaionFlag == "true")
+                    {
+                        <th>itemAssociation</th>
+                    }*@
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="SortId">
+                @if (Model.listofuploadedFiles != null)
+                {
+                    foreach (var item in Model.listofuploadedFiles)
+
+                    {
+                        <tr>
+                            @if (Model.islocked != "yes")
+
+                            {
+                                <td>
+                                    <input type="checkbox" name="@item.Fileid" class="deleteselctedcheckbox" id=@item.Fileid />
+
+                                </td>
+                            }
+                            <td>
+
+                                @*@Html.ActionLink(@item.shortFileName, "DownloadFile", "Home", new { filename = @item.Filename, @userid = '2'  }, null)*@
+
+                                @item.shortFileName
+
+                            </td>
+                            <td>
+                                @item.description
+                                @*@Html.ActionLink("Delete File", "DeleteFile", "Home", new { filename = @item.Filename, @userid = '2' }, null)*@
+
+                            </td>
+                            <td>@item.Uploadeddate</td>
+                            <td>@item.DocumentType</td>
+
+
+                            <td id="FileCreatedByInPartial">
+
+                                @item.createdBy
+                                @*@Html.ActionLink("Delete File", "DeleteFile", "Home", new { filename = @item.Filename, @userid = '2' }, null)*@
+
+                            </td>
+
+
+                            <td>
+                                @Html.ActionLink("View/Download", "DownloadFile", "Home", new { filename = @item.Fileid, @userid = '2' }, null)
+
+                            </td>
+
+
+                            @*@if (Model.ItemAssocitaionFlag == "true")
+                            {
+                                <td>
+                                    @Html.ActionLink("ItemAssociation", "CommercialInvoiceItems", "Home", new { documentid = @item.Fileid }, null)
+
+                                </td>
+                            }*@
+
+                        </tr>
+                    }
+                }
+        </table>
+
+    }
+    else
+    {
+
+
+        <table id="Uploadedfileslist" class="table">
+            <thead>
+                <tr>
+                    @if (Model.islocked != "yes")
+
+                    {
+                        <th style="float:right"><input type="checkbox" runat="server" id="headercheck" /></th>
+                    }
+
+                    <th style="text-align: right;  margin-left: 80px;"><u> @Resources.GlobalAra.FileName</u></th>
+                    <th style="text-align: right; padding-left: 25px;"><u>@Resources.GlobalAra.Description</u></th>
+                    <th style="text-align: right; padding-left: 10px;"><u>@Resources.GlobalAra.UploadedDate</u></th>
+
+
+                    <th style="text-align:right">@Resources.GlobalAra.DocumentType</th>
+
+                    <th style="text-align:right">@Resources.GlobalAra.CreatedBy</th>
+                    <th style="text-align:right">@Resources.GlobalAra.ViewDownload</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="SortId">
+                @if (Model.listofuploadedFiles != null)
+                {
+
+                    foreach (var item in Model.listofuploadedFiles)
+
+                    {
+                        <tr>
+
+                            @if (Model.islocked != "yes")
+
+                            {
+                                <td>
+                                    <input type="checkbox" name="@item.Fileid" runat="server" class="deleteselctedcheckbox" id=@item.Fileid />
+
+
+
+                                </td>
+                            }
+                            <td>
+                                @*@Html.ActionLink(@item.shortFileName, "DownloadFile", "Home", new { filename = @item.Filename, @userid = '2'  }, null)*@
+
+                                @item.shortFileName
+
+                            </td>
+                            <td style="text-align:right">
+                                @item.description
+                                @*@Html.ActionLink("Delete File", "DeleteFile", "Home", new { filename = @item.Filename, @userid = '2' }, null)*@
+
+                            </td>
+
+
+                            <td>@item.Uploadeddate</td>
+                            <td>@item.DocumentType</td>
+                            <td>
+
+                                @item.createdBy
+                                @*@Html.ActionLink("Delete File", "DeleteFile", "Home", new { filename = @item.Filename, @userid = '2' }, null)*@
+
+                            </td>
+                            <td>
+                                @Html.ActionLink("عرض/تحميل", "DownloadFile", "Home", new { filename = @item.Fileid, @userid = '2' }, null)
+
+                            </td>
+
+
+                        </tr>
+                    }
+
+                }
+        </table>
+    }
+    <div id="pageNavPosition" style="padding-top: 20px ;display:none" align="center">
+    </div>
+}
+    @*<script src="~/Scripts/jquery-1.10.2.js"></script>*@
+
+    @*<script src="~/Scripts/jquery-3.2.1.min.js"></script>*@
+    @*<script src="~/Scripts/jquery-3.2.1.js"></script>*@
+    @*<script src="~/Scripts/datatbles1.10.js"></script>*@
+    @*<script src="~/Scripts/jquery.dataTables.min.js"></script>*@
+
+
+    @*<script src="~/Scripts/jquery.dataTables.min.js"></script>*@
+
+    @*<script src="~/Scripts/jquery.dataTables.js"></script>*@
+
+
+    <script type="text/javascript">
+        // $("#Uploadedfileslist").DataTable();
+
+        $.fn.dataTable.ext.pager.numbers_length = 5;
+
+
+        $('#Uploadedfileslist').dataTable({
+            "oLanguage": {
+                "infoEmpty": ""
+            },
+            order: [],
+            columnDefs: [{ orderable: false, targets: [0] }],
+            "bPaginate": true,
+            "bLengthChange": false,
+            'sPaginationType': 'ellipses',
+            //  "scrollY": "true",
+            //  "scrollCollapse": true,
+
+            'pagingType': 'full_numbers',
+            "info": false
+
+        });
+        // $.fn.DataTable.ext.pager.numbers_length = 3;
+
+        if ($("#Uploadedfileslist tbody tr:eq(0) td").html() == "No data available in table") {
+            $("#Uploadedfileslist tbody tr:eq(0) td").html('');
+        }
+
+
+        $("#headercheck").click(function () {
+            if (getlanguageforalert == 'eng') {
+                //prev = 'prev';
+                // next = 'next';
+
+                $("#Uploadedfileslist_previous").text("<Prev");
+
+                $("#Uploadedfileslist_next").text("Next>");
+
+                $("#Uploadedfileslist_first").text("<<First");
+
+                $("#Uploadedfileslist_last").text("Last>>");
+
+            }
+            else {
+
+
+                $("#Uploadedfileslist_previous").text(" السابق");
+
+                $("#Uploadedfileslist_next").text("التالي");
+
+                $("#Uploadedfileslist_first").text("الأولى");
+                $("#Uploadedfileslist_last").text("الأخيرة");          //  prev = 'السابق';
+                //  next = 'التالى';
+            }
+            $(".mcbutton").css('font-size', '12px');
+
+            $("#Uploadedfileslist_paginate").css('text-align', 'center');
+            $(".mcbutton").css('font-size', '12px');
+
+            $("#Uploadedfileslist_first").removeClass("paginate_button first disabled").addClass("mcbutton first disabled");
+
+
+            $("#Uploadedfileslist_last").removeClass("paginate_button last").addClass("mcbutton last");
+
+
+            $("#Uploadedfileslist_next").removeClass("paginate_button next disabled").addClass("mcbutton disabled");
+
+            $("#Uploadedfileslist_previous").removeClass("paginate_button previous disabled").addClass("mcbutton disabled");
+
+            // $( "#Uploadedfileslist_previous" ).removeClass( "paginate_button current" ).addClass( "mcbutton" );
+
+            $("#Uploadedfileslist_paginate span a").removeClass("paginate_button").addClass("mcbutton");
+            var x = $("#Uploadedfileslist_paginate span a").last().text();
+            $("#Uploadedfileslist_paginate span a").last().text(x + " ");
+
+            $("#Uploadedfileslist_paginate span a.current.mcbutton").css({ "background-color": "#333", "color": "#FFF" });
+
+        });
+
+
+        $("#Uploadedfileslist_paginate").click(function () {
+
+
+            if (getlanguageforalert == 'eng') {
+                //prev = 'prev';
+                // next = 'next';
+
+                $("#Uploadedfileslist_previous").text("<Prev");
+
+                $("#Uploadedfileslist_next").text("Next>");
+
+                $("#Uploadedfileslist_first").text("<<First");
+
+                $("#Uploadedfileslist_last").text("Last>>");
+
+            }
+            else {
+
+
+                $("#Uploadedfileslist_previous").text(" السابق");
+
+                $("#Uploadedfileslist_next").text("التالي");
+
+                $("#Uploadedfileslist_first").text("الأولى");
+                $("#Uploadedfileslist_last").text("الأخيرة");          //  prev = 'السابق';
+                //  next = 'التالى';
+            }
+
+
+
+
+
+            $(".current mcbutton").css('background-color', '#000000');
+            $(".mcbutton").css('font-size', '12px');
+            //   $('.myElementClass').css('text-align', 'center');
+
+            $("#Uploadedfileslist_paginate").css('text-align', 'center');
+
+            $("#Uploadedfileslist_first").removeClass("paginate_button first disabled").addClass("mcbutton first disabled");
+
+
+            $("#Uploadedfileslist_last").removeClass("paginate_button last").addClass("mcbutton last");
+
+
+            $("#Uploadedfileslist_next").removeClass("paginate_button next disabled").addClass("mcbutton disabled");
+
+            $("#Uploadedfileslist_previous").removeClass("paginate_button previous disabled").addClass("mcbutton disabled");
+
+            // $( "#Uploadedfileslist_previous" ).removeClass( "paginate_button current" ).addClass( "mcbutton" );
+
+            $("#Uploadedfileslist_paginate span a").removeClass("paginate_button").addClass("mcbutton");
+
+            var x = $("#Uploadedfileslist_paginate span a").last().text();
+            $("#Uploadedfileslist_paginate span a").last().text(x + " ");
+
+            $("#Uploadedfileslist_paginate span a.current.mcbutton").css({ "background-color": "#333", "color": "#FFF" });
+
+        });
+
+
+        $("#Uploadedfileslist").click(function ()
+        {
+            if (getlanguageforalert == 'eng') {
+                //prev = 'prev';
+                // next = 'next';
+                $("#Uploadedfileslist_previous").text("<Prev");
+
+                $("#Uploadedfileslist_next").text("Next>");
+
+
+                $("#Uploadedfileslist_first").text("<<First");
+
+                $("#Uploadedfileslist_last").text("Last>>");
+
+            }
+
+            else {
+                
+
+                $("#Uploadedfileslist_previous").text(" السابق");
+
+                $("#Uploadedfileslist_next").text("التالي");
+
+                $("#Uploadedfileslist_first").text("الأولى");
+                $("#Uploadedfileslist_last").text("الأخيرة");
+
+
+
+                //  prev = 'السابق';
+                //  next = 'التالى';
+            }
+
+            $(".mcbutton").css('font-size', '12px');
+
+            $("#Uploadedfileslist_paginate").css('text-align', 'center');
+            $(".mcbutton").css('font-size', '12px');
+
+            $("#Uploadedfileslist_first").removeClass("paginate_button first disabled").addClass("mcbutton first disabled");
+
+
+            $("#Uploadedfileslist_last").removeClass("paginate_button last").addClass("mcbutton last");
+
+
+            $("#Uploadedfileslist_next").removeClass("paginate_button next disabled").addClass("mcbutton disabled");
+
+            $("#Uploadedfileslist_previous").removeClass("paginate_button previous disabled").addClass("mcbutton disabled");
+
+            // $( "#Uploadedfileslist_previous" ).removeClass( "paginate_button current" ).addClass( "mcbutton" );
+
+            $("#Uploadedfileslist_paginate span a").removeClass("paginate_button").addClass("mcbutton");
+            var x = $("#Uploadedfileslist_paginate span a").last().text();
+            $("#Uploadedfileslist_paginate span a").last().text(x + " ");
+
+            $("#Uploadedfileslist_paginate span a.current.mcbutton").css({ "background-color": "#333", "color": "#FFF" });
+        });
+
+
+
+        window.onload = function () {
+
+
+
+
+
+
+        }
+
+
+
+
+        $(document).ready(function () {
+            if (getlanguageforalert == 'eng') {
+                //prev = 'prev';
+                // next = 'next';
+
+                $("#Uploadedfileslist_previous").text("<Prev");
+
+                $("#Uploadedfileslist_next").text("Next>");
+
+                $("#Uploadedfileslist_first").text("<<First");
+
+                $("#Uploadedfileslist_last").text("Last>>");
+
+            }
+            else {
+
+                //$("#Uploadedfileslist_previous").text("<السابق");
+
+                //$("#Uploadedfileslist_next").text(">التالى");
+
+                //$("#Uploadedfileslist_first").text("<<أول");
+
+                //$("#Uploadedfileslist_last").text("الاخير>>");
+                $("#Uploadedfileslist_previous").text(" السابق");
+
+                $("#Uploadedfileslist_next").text("التالي");
+
+                $("#Uploadedfileslist_first").text("الأولى");
+                $("#Uploadedfileslist_last").text("الأخيرة");
+
+
+
+                //  prev = 'السابق';
+                //  next = 'التالى';
+            }
+
+            $(".mcbutton").css('font-size', '12px');
+            $("#Uploadedfileslist_paginate").css('text-align', 'center');
+
+            $("#Uploadedfileslist_first").removeClass("paginate_button first disabled").addClass("mcbutton first disabled");
+
+
+            $("#Uploadedfileslist_last").removeClass("paginate_button last").addClass("mcbutton last");
+
+
+            $("#Uploadedfileslist_next").removeClass("paginate_button next disabled").addClass("mcbutton disabled");
+
+            $("#Uploadedfileslist_previous").removeClass("paginate_button previous disabled").addClass("mcbutton disabled");
+
+            // $( "#Uploadedfileslist_previous" ).removeClass( "paginate_button current" ).addClass( "mcbutton" );
+
+            $("#Uploadedfileslist_paginate span a").removeClass("paginate_button").addClass("mcbutton");
+            var x = $("#Uploadedfileslist_paginate span a").last().text();
+            $("#Uploadedfileslist_paginate span a").last().text(x + " ");
+
+        });
+
+
+
+
+
+    </script>

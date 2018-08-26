@@ -1,0 +1,244 @@
+Message :The user name or password is incorrect<br/>
+StackTrace :   at DocumentManagementServices.ImpersonateUser.Impersonate(String domainName, String userName, String password) in C:\01082018\WebApplication1\WebApplication1\Models\Impersonator.cs:line 68
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\01082018\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 207
+Date :1/16/2018 3:41:40 PM
+
+-----------------------------------------------------------------------------
+
+first
+first
+afterImpersonate
+afterfilecheck
+first
+afterImpersonate
+1
+5
+C:\Users\ar.parwez\Downloads\localhost_52240_OrgUserAccounts.pdfobjfile
+Truemodelvalid
+localhost_52240_OrgUserAccounts.pdfpostedFile
+1
+afterfilecheck
+first
+first
+afterImpersonate
+1
+5
+C:\Users\ar.parwez\Downloads\HelloWorld.pdf.pdfobjfile
+Truemodelvalid
+httposted
+HelloWorld.pdf.pdfpostedFile
+first
+first
+afterImpersonate
+3
+5
+localhost_52240_OrgUserAccounts.pdf.pdfobjfilePath
+Truemodelvalid
+SBI NRI AOF - High res15 Dec 2015.pdfobjfilePath
+Truemodelvalid
+SBI NRI.pdf.pdfobjfilePath
+Truemodelvalid
+first
+afterImpersonate
+2
+5
+fw4.pdf.pdfobjfilePath
+Truemodelvalid
+first
+afterImpersonate
+2
+5
+HelloWorldlocalhost.pdf.pdfobjfilePath
+Truemodelvalid
+VehicleTransactionSummary (1).pdfobjfilePath
+Truemodelvalid
+first
+afterImpersonate
+2
+5
+C:\Users\ar.parwez\Downloads\HelloWorld.pdf.pdfobjfilePath
+Truemodelvalid
+afterfilecheck
+C:\Users\ar.parwez\Downloads\SomeLayout.pdf.pdfobjfilePath
+Truemodelvalid
+afterfilecheck
+first
+first
+afterImpersonate
+2
+5
+C:\Users\ar.parwez\Downloads\HelloWorldlocalhost.pdf (2).pdfobjfilePath
+Truemodelvalid
+afterfilecheck
+C:\Users\ar.parwez\Downloads\Your Filename (1).pdfobjfilePath
+Truemodelvalid
+afterfilecheck
+first
+first
+first
+first
+first
+first
+first
+first
+afterImpersonate
+1
+5
+C:\Users\ar.parwez\Downloads\HelloWorld.pdf.pdfobjfilePath
+Truemodelvalid
+afterfilecheck
+url
+Message :Index was outside the bounds of the array.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\01082018\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 252
+Date :2/6/2018 3:57:11 PM
+
+-----------------------------------------------------------------------------
+
+Message :Index was outside the bounds of the array.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\01082018\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 252
+Date :2/6/2018 3:59:25 PM
+
+-----------------------------------------------------------------------------
+
+Message :Object reference not set to an instance of an object.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.setSessionRealtedValues() in C:\01082018\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 813
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\01082018\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 250
+Date :2/7/2018 11:58:33 AM
+
+-----------------------------------------------------------------------------
+
+Message :Object reference not set to an instance of an object.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\01082018\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 238
+Date :2/7/2018 6:02:29 PM
+
+-----------------------------------------------------------------------------
+
+Message :Object reference not set to an instance of an object.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\01082018\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 238
+Date :2/7/2018 6:02:29 PM
+
+-----------------------------------------------------------------------------
+
+Message :Object reference not set to an instance of an object.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\01082018\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 238
+Date :2/7/2018 6:02:51 PM
+
+-----------------------------------------------------------------------------
+
+Message :Object reference not set to an instance of an object.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\01082018\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 238
+Date :2/7/2018 6:03:13 PM
+
+-----------------------------------------------------------------------------
+
+Message :Object reference not set to an instance of an object.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\01082018\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 238
+Date :2/7/2018 6:05:13 PM
+
+-----------------------------------------------------------------------------
+
+Message :The parameter is incorrect<br/>
+StackTrace :   at DocumentManagementServices.ImpersonateUser.Impersonate(String domainName, String userName, String password) in C:\01082018\WebApplication1\WebApplication1\Models\Impersonator.cs:line 68
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\01082018\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 260
+Date :2/8/2018 3:03:49 PM
+
+-----------------------------------------------------------------------------
+
+Message :Object reference not set to an instance of an object.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.<>c__DisplayClass57_0.<UploadFiles>b__2(HttpPostedFileBase m)
+   at System.Linq.Enumerable.WhereArrayIterator`1.MoveNext()
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F)
+Date :2/11/2018 3:55:58 PM
+
+-----------------------------------------------------------------------------
+
+Message :Object reference not set to an instance of an object.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.<>c__DisplayClass57_0.<UploadFiles>b__2(HttpPostedFileBase m)
+   at System.Linq.Enumerable.WhereArrayIterator`1.MoveNext()
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F)
+Date :2/11/2018 4:08:31 PM
+
+-----------------------------------------------------------------------------
+
+Message :Object reference not set to an instance of an object.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.<>c__DisplayClass57_0.<UploadFiles>b__2(HttpPostedFileBase m)
+   at System.Linq.Enumerable.WhereArrayIterator`1.MoveNext()
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F)
+Date :2/11/2018 4:09:52 PM
+
+-----------------------------------------------------------------------------
+
+Message :Object reference not set to an instance of an object.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.setSessionRealtedValues() in C:\TokenPublish\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 856
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\TokenPublish\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 264
+Date :2/14/2018 10:32:32 AM
+
+-----------------------------------------------------------------------------
+
+Message :Input string was not in a correct format.<br/>
+StackTrace :   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\TokenPublish\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 266
+Date :2/14/2018 12:17:12 PM
+
+-----------------------------------------------------------------------------
+
+Message :Input string was not in a correct format.<br/>
+StackTrace :   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\TokenPublish\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 274
+Date :2/14/2018 12:36:24 PM
+
+-----------------------------------------------------------------------------
+
+Message :Input string was not in a correct format.<br/>
+StackTrace :   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\TokenPublish\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 274
+Date :2/14/2018 12:37:22 PM
+
+-----------------------------------------------------------------------------
+
+Message :Input string was not in a correct format.<br/>
+StackTrace :   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\TokenPublish\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 284
+Date :2/14/2018 12:58:34 PM
+
+-----------------------------------------------------------------------------
+
+Message :Input string was not in a correct format.<br/>
+StackTrace :   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\TokenPublish\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 447
+Date :2/14/2018 1:15:50 PM
+
+-----------------------------------------------------------------------------
+
+Message :Input string was not in a correct format.<br/>
+StackTrace :   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\TokenPublish\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 447
+Date :2/14/2018 1:16:03 PM
+
+-----------------------------------------------------------------------------
+
+Message :Object reference not set to an instance of an object.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.setSessionRealtedValues() in C:\TokenPublish\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 998
+   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\TokenPublish\WebApplication1\WebApplication1\Controllers\HomeController.cs:line 355
+Date :3/6/2018 9:58:07 AM
+
+-----------------------------------------------------------------------------
+
+Message :Object reference not set to an instance of an object.<br/>
+StackTrace :   at WebApplication1.Controllers.HomeController.UploadFiles(HttpPostedFileBase[] files, FormCollection collection, FileModel F) in C:\Agility-ICS\Projects\CsUploads\WebApplication1\Controllers\HomeController.cs:line 356
+Date :4/4/2018 4:48:51 PM
+
+-----------------------------------------------------------------------------
+

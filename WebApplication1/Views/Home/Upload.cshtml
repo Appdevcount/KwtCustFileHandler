@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script src="@Url.Content("~/Scripts/Upload.js")"></script>
+        
+        
+        
+
+<html>
+<head>
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Upload</title>
+
+  
+
+
+</head>
+
+
+<body>
+
+
+    <div>
+        @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+           // @Html.AntiForgeryToken()
+
+            <fieldset>
+                <legend>Upload a file</legend>
+                <div class="editor-field">
+                    @Html.TextBox("file", "", new { type = "file",@id="UploadCtrl" })
+                </div>
+                <div class="editor-field">
+                    <input type="submit" value="Upload" />
+                </div>
+                <div>
+
+                   <input type="button" value="Remove" id="RemoveFile" />
+
+                </div>
+
+
+            </fieldset>
+        }
+    </div>
+</body>
+</html>

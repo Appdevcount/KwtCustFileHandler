@@ -1,0 +1,101 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<title>DataTables | Table plug-in for jQuery</title>
+        <link rel="stylesheet" type="text/css" href="styles/jquery.dataTables.min.css" />
+�
+		<script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.12.4.js"></script>
+        <script type="text/javascript" charset="utf8" src="scripts/jquery.dataTables.min.js"></script>
+		<script type="text/javascript">
+$(document).ready(function() {
+    var table = $('#table1').DataTable( {
+        "processing": true,
+        "ajax": "data/data1.txt",
+        "columns": [
+			{ "data": function () { return "<input type='checkbox'/>" } },
+			{ "data": "name" },
+			{ "data": "hr.position" },
+			{ "data": "contact.0" },
+			{ "data": "contact.1" },
+			{ "data": "hr.start_date" },
+			{ "data": "hr.salary" }
+        ]
+    });
+
+    var dataset = [
+        ["", "11", "10111"],
+        ["", "22", "10111"],
+        ["", "33", "10111"],
+        ["","44","10111"]
+
+    ];
+    var table = $('#table2').DataTable({
+        "processing": true,
+        "data": dataset,
+        "columns": [
+			{ "data": function () { return "<input type='checkbox'/>" } },
+			{ "title": "ItemId" },
+			{ "title": "HSCODE" },
+        ]
+    });
+} );
+
+            
+
+
+</script>
+
+	<body class="wide">
+
+        <div id="table1container">
+            <table id="table1" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Selector</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Selector</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                    </tr>
+                </tfoot>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="table2container" style="width:400px">
+            <table id="table2" classs="display">
+                <thead>
+                    <tr>
+                        <th>XX</th>
+                        <th>ItemId</th>
+                        <th>HSCODE</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>XX</th>
+                        <th>ItemId</th>
+                        <th>HSCODE</th>
+                    </tr>
+                </tfoot>
+                <tbody></tbody>
+            </table>
+        </div>
+</body>
+</html>

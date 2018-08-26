@@ -1,0 +1,127 @@
+﻿<!doctype html>
+<html>
+<head>
+    <script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.12.4.js"></script>
+    <link href="~/Content/datatables.min.css" rel="stylesheet" />
+
+    <script src="~/scripts/jquery.dataTables.min.js"></script>
+
+
+
+
+    <script src="~/Scripts/DocumentsData.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            alert(1);
+            var dataset = [
+                ["", "11", "10111"],
+                ["", "22", "10111"],
+                ["", "33", "10111"],
+                ["", "44", "10111"]
+
+            ];
+            $('#ItemTables').dataTable({
+                "processing": true,
+                "data": dataset,
+                "columns": [
+                    { "data": function () { return "<input type='checkbox'/>" } },
+                    { "title": "ItemId" },
+                    { "title": "HSCODE" }
+                ]
+            });
+
+            $('#DocumentsTable').dataTable({
+                "processing": true,
+                "data": documentsdata,
+                "columns": [
+                    { "title": "DocId" },
+                    { "title": "DocName" },
+                    { "title": "CreatedDate" }
+                ]
+            });
+        });
+    </script>
+
+    <body class="wide">
+
+        <table id="DocumentsTable" style="width: 50%;" class="table">
+            <thead>
+                <tr>
+
+                    <th><input type="checkbox" id="headercheck" /></th>
+                    <th>
+                        Docid
+                    </th>
+
+                    <th>
+                        DocName
+                    </th>
+
+                    <th>
+                        CreatedDate
+                    </th>
+                </tr>
+
+            </thead>
+            <tfoot>
+
+                <tr>
+
+                    <th><input type="checkbox" id="headercheck" /></th>
+                    <th>
+                        Docid
+                    </th>
+
+                    <th>
+                        DocName
+                    </th>
+
+                    <th>
+                        CreatedDate
+                    </th>
+                </tr>
+            </tfoot>
+
+        </table>
+
+
+        <table id="ItemTables" style="width: 50%;" class="table">
+            <thead>
+                <tr>
+
+                    <th><input type="checkbox" id="headercheck" /></th>
+                    <th>
+                        ItemID
+                    </th>
+
+                    <th>
+                        Hscode
+                    </th>
+
+
+                </tr>
+
+            </thead>
+            <tfoot>
+
+                <tr>
+
+                    <th><input type="checkbox" id="headercheck" /></th>
+                    <th>
+                        Docid
+                    </th>
+
+                    <th>
+                        DocName
+                    </th>
+
+                    <th>
+                        CreatedDate
+                    </th>
+                </tr>
+            </tfoot>
+
+        </table>
+    </body>
+</html>
