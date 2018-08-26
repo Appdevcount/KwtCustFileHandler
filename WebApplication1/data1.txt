@@ -32,7 +32,7 @@
               "start_date": "2009/01/12"
           },
           "contact": [
-            "San Francisco",
+            "San Francisco0",
             "1562"
           ]
       },
